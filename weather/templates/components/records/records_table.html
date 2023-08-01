@@ -1,0 +1,37 @@
+<table class="table table-responsive table-hover">
+    <thead>
+    <tr class="sticky-top">
+        <th scope="col">Населённый пункт</th>
+        <th scope="col">Дата</th>
+        <th scope="col">Время</th>
+        <th scope="col">Температура &#8451;</th>
+        <th scope="col">Температура &#8457;</th>
+        <th scope="col">Функции</th>
+    </tr>
+    </thead>
+    <tbody class="table-group-divider">
+        {% for record in records %}
+            <tr>
+                <td scope="row">{{ record.city.name }}</td>
+                <td scope="row">{{ record.datetime|date:'d-m-Y' }}</td>
+                <td scope="row">{{ record.datetime|date:'H:i' }}</td>
+                <td scope="row">{{ record.c_value }}</td>
+                <td scope="row">{{ record.f_value }}</td>
+                <td scope="row">
+                    <a
+                        type='button'
+                        class="btn btn-sm btn-warning"
+                        href="{% url 'records:update' record.id%}">
+                        Редактировать
+                    </a>
+                    <a
+                        type='button'
+                        class="btn btn-sm btn-danger"
+                        href="{% url 'records:delete' record.id%}">
+                        Удалить
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>

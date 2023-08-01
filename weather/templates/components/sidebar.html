@@ -1,0 +1,22 @@
+<div class="d-flex col-auto col-md-3 col-xl-2 px-sm-2 px-0 shadow rounded-end" style="background: #40454a;">
+    <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+        <span class="fs-5 d-none d-sm-inline">Навигация</span>
+        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start sticky-bottom" id="menu">
+            <li>{% include 'components/sidebar/locations.html' %}</li>
+            <li>{% include 'components/sidebar/records.html' %}</li>
+            <li>{% include 'components/sidebar/chart.html' %}</li>
+        </ul>
+        {% if user.is_authenticated %}
+            {% include 'components/sidebar/profile_dropdown.html' %}
+        {% else %}
+            <div class="btn-group-vertical m-auto" role="group" aria-label="Vertical button group">
+                <a role="button" class="btn btn btn-primary m-auto" href="{% url 'users:login' %}">
+                    Авторизироваться
+                </a>
+                <a role="button" class="btn btn btn-primary mt-2" href="{% url 'users:signup' %}">
+                    Зарегистрироваться
+                </a>
+            </div>
+        {% endif %}
+    </div>
+</div>

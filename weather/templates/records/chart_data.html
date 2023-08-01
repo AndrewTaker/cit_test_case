@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load user_filters %}
+
+{% block title %}
+    График погоды
+{% endblock title %}
+
+{% block content %}
+    <form method="get" class='w-25'>
+        {% include 'components/forms/form.html' %}
+        <button class="btn btn-success mt-2" type="Submit">Посмотреть</button>
+    </form>
+
+    {% if 'city' in request.GET and 'datetime' in request.GET %}
+        {% if data %}
+            {% include 'components/charts/chart_canvas.html' %}
+            {% include 'components/charts/table.html' %}
+        {% else %}
+            <p class="alert alert-warning m-3">На эту дату данных нет.</p>
+        {% endif %}
+    {% endif %}
+
+    <div hidden id="js_data">{{ js_data }}</div>
+    <div hidden id="js_labels">{{ js_labels }}</div>
+{% endblock content %}
+
+{% block extra_head_tags %}
+    <script defer src="{% static 'js/charts.js' %}"></script>
+    {% include 'components/datepicker.html' %}
+{% endblock extra_head_tags %}

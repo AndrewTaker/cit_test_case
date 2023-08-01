@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Список городов
+{% endblock title %}
+
+{% block content %}
+    {% include 'components/locations/locations_table.html' %}
+    {% if page_obj.has_other_pages %}
+        {% include 'components/pagination.html' %}
+    {% endif %}
+{% endblock content %}

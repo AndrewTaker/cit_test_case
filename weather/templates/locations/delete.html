@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Удалить город
+{% endblock title %}
+
+{% block content %}
+    <form method="post" action="{% url 'locations:delete' location.id %}" class="w-25">
+        {% csrf_token %}
+        <h3>Действительно удалить {{ location.name }}?</h3>
+        <mark>
+            <strong>Все погодные записи, связанные с этим городом, будут удалены.</strong>
+        </mark>
+        <button class="btn btn-danger mt-2" type="Submit">Подтердить</button>
+    </form>
+{% endblock content %}

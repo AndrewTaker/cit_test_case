@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Добавить запись
+{% endblock title %}
+
+{% block extra_head_tags %}
+    {% include 'components/datetimepicker.html' %}
+{% endblock extra_head_tags %}
+
+{% block content %}
+    <form method="post" action="{% url 'records:add'%}" class="w-25">
+        {% csrf_token %}
+        {% include 'components/forms/form.html' %}
+        <button class="btn btn-primary mt-2" type="Submit">Добавить</button>
+    </form>
+{% endblock content %}

@@ -1,0 +1,20 @@
+<table class="table table-sm table-responsive table-hover">
+    <thead>
+    <tr class="sticky-top">
+        <th scope="col">Населённый пункт</th>
+        <th scope="col">Дата</th>
+        <th scope="col">Время</th>
+        <th scope="col">t &#8451;</th>
+    </tr>
+    </thead>
+    <tbody class="table-group-divider">
+        {% for field in data %}
+            <tr>
+                <td scope="row">{{ field.city__name }}</td>
+                <td scope="row">{{ field.datetime__date }}</td>
+                <td scope="row">{{ field.datetime__time }}</td>
+                <td scope="row">{{ field.c_value }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>

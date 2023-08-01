@@ -1,0 +1,22 @@
+<div class="dropdown pb-4">
+    <a
+        href="#"
+        class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+        data-bs-toggle="dropdown"
+        aria-expanded="false">
+        <img
+            src="https://em-content.zobj.net/thumbs/240/apple/354/new-moon-face_1f31a.png"
+            alt="Cтандартный аватар"
+            width="50"
+            height="50"
+            class="rounded-circle">
+        <span class="d-none d-sm-inline mx-1">
+            {{ user.username }}
+        </span>
+    </a>
+    <ul class="dropdown-menu text-small shadow">
+        <li>
+            <a class="dropdown-item" href="{% url 'users:logout' %}">Выйти</a>
+        </li>
+    </ul>
+</div>

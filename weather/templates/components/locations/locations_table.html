@@ -1,0 +1,33 @@
+<table class="table table-responsive table-hover">
+    <thead>
+    <tr class="sticky-top text-left">
+        <th scope="col">Населённый пункт</th>
+        <th scope="col">Широта</th>
+        <th scope="col">Долгота</th>
+        <th scope="col">Функции</th>
+    </tr>
+    </thead>
+    <tbody class="table-group-divider">
+        {% for location in locations %}
+            <tr class="text-left">
+                <td scope="row">{{ location.name }}</td>
+                <td scope="row">{{ location.longitude}}</td>
+                <td scope="row">{{ location.latitude}}</td>
+                <td scope="row">
+                    <a
+                        type='button'
+                        class="btn btn-sm btn-warning"
+                        href="{% url 'locations:update' location.id%}">
+                        Редактировать
+                    </a>
+                    <a
+                        type='button'
+                        class="btn btn-sm btn-danger"
+                        href="{% url 'locations:delete' location.id%}">
+                        Удалить
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>

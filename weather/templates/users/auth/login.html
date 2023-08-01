@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Авторизация
+{% endblock title %}
+
+{% block content %}
+    <form method="post" action="{% url 'users:login' %}" class="w-25">
+        {% csrf_token %}
+        {% include 'components/forms/form.html' %}
+        <button class="btn btn-primary mt-2" type="Submit">Войти</button>
+        <a href="{% url 'users:signup' %}" class="m-4 mt-3 d-flex">
+            <small>Нет аккаунта? Зарегистрироваться</small>
+        </a>
+    </form>
+{% endblock content %}
