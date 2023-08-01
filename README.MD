@@ -18,7 +18,7 @@
 `python manage.py get_test_data` позволяет получить прогноз на ближайшие четыре дня с диапазоном в три часа. Чтобы воспользоваться этой функцией, нужно создать в корне проекта _в той же директории, где файл `requirements.txt`_ файл .env и наполнить его следующими данными:
 ```
 DJANGO_SECRET_KEY = Django `SECRET_KEY` из файла setting.py
-WEATHERMAP_API_KEY = API ключ для сервиса [Open Weather Map](https://openweathermap.org/)
+WEATHERMAP_API_KEY = API ключ для сервиса  Open Weather Map https://openweathermap.org/
 ```
 ### Вариант с дампом
 В директории с файлом `manage.py` лежит файл `database.json`, в котором уже есть предзаполненные данные.
