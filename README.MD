@@ -11,6 +11,7 @@
 `pip install -r requirements.txt` установить зависимости
 
 `python manage.py makemigrations` создать миграции
+
 `python manage.py migrate` применить миграции
 
 ### Вариант запуска с живыми данными
