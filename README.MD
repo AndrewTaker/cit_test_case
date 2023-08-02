@@ -4,9 +4,15 @@
 - Jquery 3.7.0
 - Chart.js 4.0
 ### Локальный запуск
-`https://github.com/AndrewTaker/cit_test_case.git` загрузить без ssh
+`git clone https://github.com/AndrewTaker/cit_test_case.git` загрузить без ssh
 
-`git@github.com:AndrewTaker/cit_test_case.git` загрузить, используя ssh
+`git clone git@github.com:AndrewTaker/cit_test_case.git` загрузить, используя ssh
+
+`python -m venv venv` создать стандартное виртуальное окружение
+
+`source venv/bin/activate` активировать окружение для POSIX
+
+`source venv/scripts/activate` активировать окружение для Windows
 
 `pip install -r requirements.txt` установить зависимости
 
